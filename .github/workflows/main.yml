@@ -36,12 +36,9 @@ jobs:
         working-directory: ./scripts
         run: npm ci
       
-      - name: Create Ethereum Identity
-        run: node scripts/createNewEthereumIdentity.js
-      
-      - name: Link Human to Agent
-        run: |
-          node scripts/manualLinkHumanToAgent.js --challenge '{
-            "name": "${{ inputs.agent_name }}",
-            "description": "${{ inputs.agent_description }}"
-          }'
+ - name: Link Human to Agent
+  run: |
+    node scripts/manualLinkHumanToAgent.js --challenge '{
+      "name": "agus-sarjono",
+      "description": "${{ inputs.agent_description }}"
+    }'
